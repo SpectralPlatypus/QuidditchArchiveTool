@@ -4,8 +4,8 @@ This application can be used for extracting the contents of a .ccd file, which i
 
 ## Archive Format
 
-File archive hasn't been fully documented yet, but here is the known breakdown:
-
+Original breakdown from: http://www.watto.org/specs.html?specs=Archive_CCD_FKNL
+```
 // ARCHIVE HEADER (56 bytes)
   4 - Header (Always string "FKNL")
   4 - Version (Always 2 for QWC files)
@@ -41,7 +41,7 @@ File archive hasn't been fully documented yet, but here is the known breakdown:
 // FILE DATA
   // for each file
     X - File Data
-
+```
 File section deserves a special mention as the contents of this region are compressed with RefPack. This streams needs to be deflated  before files can be extracted according to the header data above. Unlike most RefPack streams from other EA game archives, first-byte of the CCD streams (normally reserved for flags) are always set to 0x15. This is followed by the standard magic number 0xFB. 
 
 ## Usage
