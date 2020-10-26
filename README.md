@@ -10,7 +10,7 @@ Original breakdown from: http://www.watto.org/specs.html?specs=Archive_CCD_FKNL
   4 - Header (Always string "FKNL")
   4 - Version (Always 2 for QWC files)
   4 - First File Offset
-  4 - Unknown
+  4 - Deflated Folder Size 
   4 - File Data Length
   4 - Number Of Files
   4 - Unknown (1)
