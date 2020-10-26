@@ -49,11 +49,12 @@
   <ItemGroup>
     <Compile Include="CCD\CCDFileManager.cs" />
     <Compile Include="CCD\CCDStructs.cs" />
-    <Compile Include="Compress\RefPackCompress.cs" />
+    <Compile Include="RefPack\RefPackCompress.cs" />
+    <Compile Include="RefPack\RefPackSlidingWindow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RefPackOutputBuffer.cs" />
-    <Compile Include="RefPackStream.cs" />
+    <Compile Include="RefPack\RefPackOutputBuffer.cs" />
+    <Compile Include="RefPack\RefPackStream.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
