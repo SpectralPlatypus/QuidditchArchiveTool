@@ -228,12 +228,6 @@ namespace QWCArchiveExtractor
 
             header.uncompressedFolderSize = deflatedDirLen;
 
-            using(var fl = File.Create(@"C:\Users\Chaos\Desktop\kek.txt"))
-            {
-                plainStream.Position = 0;
-                plainStream.CopyTo(fl);
-            }
-
             using (var rsc = new RefPackCompress(encodeStream))
             {
                 plainStream.Position = 0;
