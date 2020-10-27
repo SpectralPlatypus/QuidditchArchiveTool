@@ -1,8 +1,8 @@
-﻿using System;
+﻿using OpenSage.FileFormats.RefPack;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Collections.Generic;
-using OpenSage.FileFormats.RefPack;
 
 namespace QWCArchiveExtractor
 {
@@ -19,6 +19,8 @@ namespace QWCArchiveExtractor
         private string filePath;
         private bool fileDeflated = false;
         private MemoryStream decompStream;
+
+        const uint PaddingLength = 0x217;
 
 
         public CCDFileManager(string filePath)
@@ -231,7 +233,7 @@ namespace QWCArchiveExtractor
             using (var rsc = new RefPackCompress(encodeStream))
             {
                 plainStream.Position = 0;
-                byte[] array = plainStream.ToArray();
+                byte[] array = plainStream.GetBuffer();
                 rsc.Write(array, 0, array.Length);
             }
 
@@ -239,8 +241,7 @@ namespace QWCArchiveExtractor
 
             header.fileDataLen = (uint)encodeStream.Length;
 
-            const uint paddingLength = 0x217;
-            fileNameOffset += paddingLength;
+            fileNameOffset += PaddingLength;
             header.firstFileOffset = fileNameOffset;
 
             using (var fs = new FileStream(outFile, FileMode.Create, FileAccess.Write))
@@ -253,7 +254,7 @@ namespace QWCArchiveExtractor
 
                 // Write Padding
                 fs.Seek(0, SeekOrigin.End);
-                byte[] padding = new byte[paddingLength];
+                byte[] padding = new byte[PaddingLength];
                 var random = new Random();
                 random.NextBytes(padding);
 
@@ -296,7 +297,7 @@ namespace QWCArchiveExtractor
                 bw.Write(fileInfo.Offset);
                 bw.Write(fileInfo.Length);
                 bw.Write(fileInfo.Length);
-                
+
                 long pos = stream.Position;
                 stream.Seek(fileInfo.NameOffset, SeekOrigin.Begin);
                 bw.Write(fileInfo.Name.ToCharArray());
