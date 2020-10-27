@@ -6,6 +6,11 @@ RefPack implementation from OpenSAGE project is used for dealing with the compre
 
 The compression algorithm is based on the original file by KUDr (original SVN is no longer available).
 
+
+## Dependencies
+
+- Mono.Options (available via Nuget)
+
 ## Archive Format
 
 Original breakdown from: http://www.watto.org/specs.html?specs=Archive_CCD_FKNL
