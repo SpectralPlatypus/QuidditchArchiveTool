@@ -46,8 +46,15 @@ Original breakdown from: http://www.watto.org/specs.html?specs=Archive_CCD_FKNL
   // for each file
     X - File Data
 ```
-File section deserves a special mention as the contents of this region are compressed with RefPack. This streams needs to be deflated  before files can be extracted according to the header data above. Unlike most RefPack streams from other EA game archives, first-byte of the CCD streams (normally reserved for flags) are always set to 0x15. This is followed by the standard magic number 0xFB. 
+File section deserves a special mention as the contents of this region are compressed with RefPack. This streams needs to be deflated  before files can be extracted according to the header data above. Unlike most RefPack streams from other EA game archives, first-byte of the CCD streams (normally reserved for flags) are always set to 0x15. This is followed by the standard magic number 0xFB. The proceeding archive length is always 4-bytes long, regardless of the first byte of the archive stream. 
+It's also noteworthy that compression uses a reference window size of 0x4000, unlike other games that generally seem to use 0x8000. Using the default value of 0x8000 will cause QWC to crash upon parsing the archive.
 
 ## Usage
+Compress folder Gryff and its content to Gryff.ccd:
+QWCArchiveTool.exe -c "Gryff" -o  ".\Gryff.ccd "
 
-QWCArchiveExtractor.exe <file.ccd> [-v]
+Extract Gryff.ccd to and place contents in ..\OutputDir\Gryff\
+QWCArchiveTool.exe -e "C:\Users\Chaos\Desktop\Gryff.ccd" -o  ..\OutputDir
+
+Search for string "snitch" in all cli files within game archives (game folder location is detected via Registry by default):
+QWCArchiveTool.exe -s "snitch"
