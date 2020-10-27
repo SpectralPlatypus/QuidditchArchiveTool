@@ -51,10 +51,15 @@ It's also noteworthy that compression uses a reference window size of 0x4000, un
 
 ## Usage
 Compress folder Gryff and its content to Gryff.ccd:
-QWCArchiveTool.exe -c "Gryff" -o  ".\Gryff.ccd "
 
-Extract Gryff.ccd to and place contents in ..\OutputDir\Gryff\
-QWCArchiveTool.exe -e "C:\Users\Chaos\Desktop\Gryff.ccd" -o  ..\OutputDir
+`QWCArchiveTool.exe -c "Gryff" -o  ".\Gryff.ccd "`
 
-Search for string "snitch" in all cli files within game archives (game folder location is detected via Registry by default):
-QWCArchiveTool.exe -s "snitch"
+Extract Gryff.ccd to and place contents in ..\OutputDir\Gryff\:
+
+`QWCArchiveTool.exe -e "C:\Users\Chaos\Desktop\Gryff.ccd" -o  ..\OutputDir`
+
+Search for string "snitch" in all cli files within game archives:
+
+`QWCArchiveTool.exe -s "snitch"`
+
+If game directory option is omitted, the location will be retrieved from Registry.
