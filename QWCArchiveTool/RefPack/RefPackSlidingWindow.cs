@@ -2,7 +2,7 @@
 using System.IO;
 
 
-namespace QWCArchiveExtractor
+namespace QWCArchiveTool
 {
 	internal class RefPackSlidingWindow
 	{

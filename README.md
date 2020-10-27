@@ -1,6 +1,10 @@
-# Quidditch Archive Extractor
+# Quidditch Archive Tool
 
-This application can be used for extracting the contents of a .ccd file, which is used by Harry Potter: Quidditch World Cup. RefPack implementation from OpenSAGE project is used for dealing with the compressed streams: https://github.com/OpenSAGE/OpenSAGE
+This application can be used for running various operations on the contents of a .ccd file, which is used by Harry Potter: Quidditch World Cup. This tool currently supports extracting archives, compressing folders and recursive text search among game archives.
+
+RefPack implementation from OpenSAGE project is used for dealing with the compressed streams: https://github.com/OpenSAGE/OpenSAGE
+
+The compression algorithm is based on the original file by KUDr (original SVN is no longer available).
 
 ## Archive Format
 

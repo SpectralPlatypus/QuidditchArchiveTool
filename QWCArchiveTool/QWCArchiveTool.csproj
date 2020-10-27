@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CD63676E-1D3D-4281-847B-EA17DDBBC0A7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>QWCArchiveExtractor</RootNamespace>
-    <AssemblyName>QWCArchiveExtractor</AssemblyName>
+    <RootNamespace>QWCArchiveTool</RootNamespace>
+    <AssemblyName>QWCArchiveTool</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

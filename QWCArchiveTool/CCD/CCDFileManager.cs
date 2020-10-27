@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace QWCArchiveExtractor
+namespace QWCArchiveTool
 {
 
     internal class CCDFileManager
