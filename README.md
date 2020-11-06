@@ -61,7 +61,7 @@ Compress folder Gryff and its content to Gryff.ccd:
 
 Extract Gryff.ccd to and place contents in ..\OutputDir\Gryff\:
 
-`QWCArchiveTool.exe -e "C:\Users\Chaos\Desktop\Gryff.ccd" -o  ..\OutputDir`
+`QWCArchiveTool.exe -e "C:\Files\Gryff.ccd" -o  ..\OutputDir`
 
 Search for string "snitch" in all cli files within game archives:
 
