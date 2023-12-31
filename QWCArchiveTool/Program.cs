@@ -85,6 +85,13 @@ namespace QWCArchiveTool
                         return;
                     }
                 }
+                else
+                {
+                    foreach(var entry in ccdFile.FileList)
+                    {
+                        Console.WriteLine(entry.Name);
+                    }
+                }
             }
             else if (folderName != string.Empty)
             {
@@ -156,7 +163,7 @@ namespace QWCArchiveTool
         {
             var col = File.ReadLines(cliFile)
                 .Select(s => s.Trim())
-                .Where(s => !s.StartsWith("#") && s.Contains(searchQuery))
+                .Where(s => !s.StartsWith("#") && s.IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase) >= 0)
                 .Where(s => !string.IsNullOrEmpty(s));
 
             return col.ToList();

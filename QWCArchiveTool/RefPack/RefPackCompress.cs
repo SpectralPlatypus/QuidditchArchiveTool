@@ -43,8 +43,6 @@ namespace QWCArchiveTool
 
         protected override void Dispose(bool disposing)
         {
-            //if(true)
-            //_stream?.Dispose();
         }
 
         #region IfImplements
@@ -249,8 +247,6 @@ namespace QWCArchiveTool
             {
                 _slidingWindow.WriteTo(_stream, srcBegin, srcCopyNum);
             }
-            //srcBegin += srcCopyNum;
-            //srcCopyNum = 0;
         }
 
         void CompressionSingleStep()
